@@ -73,11 +73,16 @@ def uploadToOptimizer():
     }
     data = {"username": theoptimizer_username,
             "password": theoptimizer_password}
-    try:
-        resp = requests.post(link, headers=headers,
-                             data=json.dumps(data)).json()
-    except:
-        print("Failed to open {}".format(link))
+    loaded = False
+    for i in range(3):
+        try:
+            resp = requests.post(link, headers=headers,
+                                data=json.dumps(data)).json()
+            loaded = True
+            break
+        except:
+            print("Failed to open {}".format(link))
+    if not loaded:
         return
     if resp.get('token'):
         auth_token = resp.get('token')
@@ -94,10 +99,15 @@ def uploadToOptimizer():
     files = {
         'file': ('file', csv_buffer, 'text/csv')
     }
-    try:
-        resp = requests.post(link, headers=headers, files=files).json()
-    except:
-        print("Failed to open {}".format(link))
+    loaded = False
+    for i in range(3):
+        try:
+            resp = requests.post(link, headers=headers, files=files).json()
+            loaded = True
+            break
+        except:
+            print("Failed to open {}".format(link))
+    if not loaded:
         return
     print(json.dumps(resp, indent=4))
 
@@ -112,10 +122,15 @@ def readAirFind():
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.193 Safari/537.36'
     }
-    try:
-        resp = requests.get(link, headers=headers).json()
-    except:
-        print("Failed to open {}".format(link))
+    loaded = False
+    for i in range(3):
+        try:
+            resp = requests.get(link, headers=headers).json()
+            loaded = True
+            break
+        except:
+            print("Failed to open {}".format(link))
+    if not loaded:
         return
     try:
         convertJSONFormat(resp)
@@ -210,7 +225,7 @@ def checkFBAPI():
             resp = requests.get(link, headers=headers).json()
         except:
             print("Failed to open {}".format(link))
-            return
+            continue
         if not next_page:
             campaign_data = resp.get('campaigns', {}).get('data', [])
             next_page = True
@@ -239,7 +254,7 @@ def checkFBAPI():
         else:
             print("Total campaigns found: {}".format(counter))
             if counter == 0:
-                input("Press enter to exit and update token")
+                print("Please update fb token")
                 exit(0)
             return
 
