@@ -9,7 +9,7 @@ theoptimizer_username = "nir-faga"
 theoptimizer_password = "5gzcVE46XXyQJ!U"
 airfind_api_key = "search-reporting-api-3894b4d0-24f2-11ef-8bc4-e5d79cac73af"
 sheet_link = "https://docs.google.com/spreadsheets/d/1MDr6KIqRhVXccQXuysycf8gJumd39PN1I9wyxR9N2C8/export?format=csv&gid=1424025984#gid=1424025984"
-fb_token = "EAAGzDRA4Rr4BOxofymkjD7HcrVgQyj0WIfQ9qW9FdYqvlxXQTJdkTTILZClMpFi4exanZCbbC93JAh1Gbyp9CXAa2WlGgY0aot6PchpGrn9fUJciptgP2ppRryZBveAdp3XMEGjXtVRpaomqbp5BAYke6q46ZA39qM9fb3AtOX9qr1XFPEkKJwZAS"
+fb_token = "EAALxlTB1Y9oBO8sZBTiQdRKm9HPjLiBTQ2OyatIOKCT3MkGtO8jDyjRXR0bAPyEyEWSkuoprnktwLVBwrXhHzltyMr0bTlk6TqzFpZANSXBSgS7KKLxedqazjCPvZCXpmJDzLpYStncZCqTmEbiX4YQwf4V1BBYq7Ct887rQBnlcF1GIQcriJh69pq1XtjZC0xPZAhWmZCqn8HHUxZCVQlkIoZALLZAq82"
 csv_buffer = io.StringIO()
 target_days = 7
 campaign_map = {}
