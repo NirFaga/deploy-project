@@ -161,7 +161,7 @@ def convertJSONFormat(data):
         TrafficSourceExchangeId = ""
         TrafficSourceAdGroupId = "0"
         TrafficSourceTargetId = ""
-        TrackerCampaignId = ""
+        TrackerCampaignId = corrected_campaign_id
         TrackerClicks = ""
         TrackerConversions = ""
         TrackerRevenue = ""
