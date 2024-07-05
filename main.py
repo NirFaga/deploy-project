@@ -9,7 +9,7 @@ theoptimizer_username = "nir-faga"
 theoptimizer_password = "5gzcVE46XXyQJ!U"
 airfind_api_key = "search-reporting-api-3894b4d0-24f2-11ef-8bc4-e5d79cac73af"
 sheet_link = "https://docs.google.com/spreadsheets/d/1MDr6KIqRhVXccQXuysycf8gJumd39PN1I9wyxR9N2C8/export?format=csv&gid=1424025984#gid=1424025984"
-fb_token = "EAALxlTB1Y9oBOZCZAi5jNanWYlOXOM3UOLJdvnY4MQySK5LB5cwg09kZB28iIst8kzVcXExHVyBgnZC9wCkUYeWYAcWoBztPrDqJxP2KS96OUmWQMlZAf281p2A60fBHmBlAzTwcswmeZAA2V0ibEYOaZAWEUykfETx9PiHiikkSfVfL18qegiIyc1H"
+fb_token = "EAAGzDRA4Rr4BOxofymkjD7HcrVgQyj0WIfQ9qW9FdYqvlxXQTJdkTTILZClMpFi4exanZCbbC93JAh1Gbyp9CXAa2WlGgY0aot6PchpGrn9fUJciptgP2ppRryZBveAdp3XMEGjXtVRpaomqbp5BAYke6q46ZA39qM9fb3AtOX9qr1XFPEkKJwZAS"
 csv_buffer = io.StringIO()
 target_days = 90
 campaign_map = {}
@@ -161,13 +161,13 @@ def convertJSONFormat(data):
         TrafficSourceExchangeId = ""
         TrafficSourceAdGroupId = "0"
         TrafficSourceTargetId = ""
-        TrackerCampaignId = corrected_campaign_id
+        TrackerCampaignId = ""
         TrackerClicks = ""
         TrackerConversions = ""
         TrackerRevenue = ""
         TrafficSourceImpressions = fb_impr
         TrafficSourceClicks = fb_clicks_all
-        TrafficSourceConversions = ""
+        TrafficSourceConversions = max(0, int(report.get('clicks', 0)))
         Cost = fb_cost
         TrafficSourceRevenue = max(0, float(report.get("revenue", 0)))
         PublisherClicks = max(0, int(report.get('impressions', 0)))
