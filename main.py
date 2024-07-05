@@ -11,7 +11,7 @@ airfind_api_key = "search-reporting-api-3894b4d0-24f2-11ef-8bc4-e5d79cac73af"
 sheet_link = "https://docs.google.com/spreadsheets/d/1MDr6KIqRhVXccQXuysycf8gJumd39PN1I9wyxR9N2C8/export?format=csv&gid=1424025984#gid=1424025984"
 fb_token = "EAALxlTB1Y9oBOZCZAi5jNanWYlOXOM3UOLJdvnY4MQySK5LB5cwg09kZB28iIst8kzVcXExHVyBgnZC9wCkUYeWYAcWoBztPrDqJxP2KS96OUmWQMlZAf281p2A60fBHmBlAzTwcswmeZAA2V0ibEYOaZAWEUykfETx9PiHiikkSfVfL18qegiIyc1H"
 csv_buffer = io.StringIO()
-target_days = 7
+target_days = 90
 campaign_map = {}
 
 
@@ -171,7 +171,7 @@ def convertJSONFormat(data):
         Cost = fb_cost
         TrafficSourceRevenue = max(0, float(report.get("revenue", 0)))
         PublisherClicks = max(0, int(report.get('impressions', 0)))
-        PublisherRevenue = "
+        PublisherRevenue = ""
         PublisherConversions = max(0, int(report.get('clicks', 0)))
 
         print(f"Date: {Date}")
