@@ -169,9 +169,9 @@ def convertJSONFormat(data):
         TrafficSourceClicks = fb_clicks_all
         TrafficSourceConversions = ""
         Cost = fb_cost
-        TrafficSourceRevenue = ""
+        TrafficSourceRevenue = max(0, float(report.get("revenue", 0)))
         PublisherClicks = max(0, int(report.get('impressions', 0)))
-        PublisherRevenue = max(0, float(report.get("revenue", 0)))
+        PublisherRevenue = "
         PublisherConversions = max(0, int(report.get('clicks', 0)))
 
         print(f"Date: {Date}")
